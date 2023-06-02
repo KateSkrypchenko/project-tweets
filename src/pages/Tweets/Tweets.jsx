@@ -2,11 +2,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 
 import { fetchUsers } from 'redux/users/users-operations';
-
 import { selectUsers, selectIsLoading, selectError } from 'redux/users/users-selectors';
 
 import { UserList } from 'components/UserList/UserList';
 import { Loader } from 'components/Loader/Loader';
+
 import { Container, Title, Button, Link, Icon } from './Tweets.styled';
 
 const Tweets = () => {
