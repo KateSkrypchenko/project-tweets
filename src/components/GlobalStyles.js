@@ -2,18 +2,25 @@ import { createGlobalStyle } from 'styled-components';
 import 'modern-normalize';
 
 export const GlobalStyle = createGlobalStyle`
+html {
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
-  padding: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #EBD8FF;
+  background-color:  #5736a3;
+  background-image: linear-gradient(114.99deg, #6731e1 -0.99%, #846abf 54.28%, #6f52b4 78.99%);
+  color: #ebd8ff;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h1,
@@ -30,6 +37,7 @@ ul,
 li {
   margin: 0;
   padding: 0;
+  list-style:  none;
 }
 
 a {

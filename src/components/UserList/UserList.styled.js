@@ -1,14 +1,34 @@
 import styled from 'styled-components';
 
 export const List = styled.ul`
-  display: grid;
-  max-width: calc(100vw - 48px);
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  grid-gap: 48px;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
-  list-style: none;
-  margin-left: auto;
-  margin-right: auto;
+  width: 100%;
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+`;
+
+export const Button = styled.button`
+  margin: 15px auto;
+  height: 50px;
+  width: 200px;
+
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+
+  background-color: #4d19c5;
+  border-radius: 10.3108px;
+  border: inherit;
+  cursor: pointer;
+  color: #ebd8ff;
+
+  transition: background-color 250ms linear;
+
+  &:hover,
+  &:focus {
+    background-color: #687bce;
+  }
 `;

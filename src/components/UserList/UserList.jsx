@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { UserItem } from './UserItem/UserItem';
-import { List } from './UserList.styled';
+import { List, Button } from './UserList.styled';
 
 export const UserList = ({ users }) => {
   const [visibleUsers, setVisibleUsers] = useState(3);
@@ -11,19 +11,21 @@ export const UserList = ({ users }) => {
   };
 
   return (
-    <List>
-      {users.slice(0, visibleUsers).map(({ id, user, tweets, followers, avatar }) => (
-        <UserItem
-          key={id}
-          id={id}
-          user={user}
-          tweets={tweets}
-          followers={followers}
-          avatar={avatar}
-          loading="lazy"
-        />
-      ))}
-      {visibleUsers < users.length && <button onClick={handleLoadMore}>Load More</button>}
-    </List>
+    <div>
+      <List>
+        {users.slice(0, visibleUsers).map(({ id, user, tweets, followers, avatar }) => (
+          <UserItem
+            key={id}
+            id={id}
+            user={user}
+            tweets={tweets}
+            followers={followers}
+            avatar={avatar}
+            loading="lazy"
+          />
+        ))}
+      </List>
+      {visibleUsers < users.length && <Button onClick={handleLoadMore}>Load More</Button>}
+    </div>
   );
 };
