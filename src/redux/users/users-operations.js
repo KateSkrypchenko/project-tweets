@@ -15,13 +15,11 @@ export const fetchUsers = createAsyncThunk('users/fetchAll', async (credentials,
   }
 });
 
-export const increaseUserFollowers = createAsyncThunk(
-  'users/increaseUserFollowers',
-  async (id, thunkAPI) => {
+export const updateUserFollowers = createAsyncThunk(
+  'users/updateUserFollowers',
+  async ({ id, followers }, thunkAPI) => {
     try {
-      const response = await instance.put(`/users/${id}`, {
-        followers: thunkAPI.getState().users[id].followers + 1,
-      });
+      const response = await instance.put(`/users/${id}`, { followers });
       console.log(response);
       return response.data;
     } catch (error) {
@@ -30,17 +28,32 @@ export const increaseUserFollowers = createAsyncThunk(
   }
 );
 
-export const decreaseUserFollowers = createAsyncThunk(
-  'users/decreaseUserFollowers',
-  async (id, thunkAPI) => {
-    try {
-      const response = await instance.put(`/users/${id}`, {
-        followers: thunkAPI.getState().users[id].followers - 1,
-      });
-      console.log(response);
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);
+// export const increaseUserFollowers = createAsyncThunk(
+//   'users/increaseUserFollowers',
+//   async (id, thunkAPI) => {
+//     try {
+//       const response = await instance.put(`/users/${id}`, {
+//         followers: thunkAPI.getState().users[id].followers + 1,
+//       });
+//       console.log(response);
+//       return response.data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );
+
+// export const decreaseUserFollowers = createAsyncThunk(
+//   'users/decreaseUserFollowers',
+//   async (id, thunkAPI) => {
+//     try {
+//       const response = await instance.put(`/users/${id}`, {
+//         followers: thunkAPI.getState().users[id].followers - 1,
+//       });
+//       console.log(response);
+//       return response.data;
+//     } catch (error) {
+//       return thunkAPI.rejectWithValue(error.message);
+//     }
+//   }
+// );

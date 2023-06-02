@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { fetchUsers, increaseUserFollowers, decreaseUserFollowers } from './users-operations';
+import { fetchUsers, updateUserFollowers } from './users-operations';
 
 const initialState = {
   items: [],
@@ -30,21 +30,21 @@ const usersSlice = createSlice({
       })
       .addCase(fetchUsers.rejected, (state, action) => handleRejected(state, action))
 
-      .addCase(increaseUserFollowers.pending, state => handlePending(state))
-      .addCase(increaseUserFollowers.fulfilled, (state, action) => {
+      .addCase(updateUserFollowers.pending, state => handlePending(state))
+      .addCase(updateUserFollowers.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.foll = action.payload;
       })
-      .addCase(increaseUserFollowers.rejected, (state, action) => handleRejected(state, action))
+      .addCase(updateUserFollowers.rejected, (state, action) => handleRejected(state, action));
 
-      .addCase(decreaseUserFollowers.pending, state => handlePending(state))
-      .addCase(decreaseUserFollowers.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.error = null;
-        state.foll = action.payload;
-      })
-      .addCase(decreaseUserFollowers.rejected, (state, action) => handleRejected(state, action));
+    // .addCase(decreaseUserFollowers.pending, state => handlePending(state))
+    // .addCase(decreaseUserFollowers.fulfilled, (state, action) => {
+    //   state.isLoading = false;
+    //   state.error = null;
+    //   state.foll = action.payload;
+    // })
+    // .addCase(decreaseUserFollowers.rejected, (state, action) => handleRejected(state, action));
   },
 });
 
