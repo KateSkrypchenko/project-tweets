@@ -6,6 +6,7 @@ import { selectUsers, selectIsLoading, selectError } from 'redux/users/users-sel
 
 import { UserList } from 'components/UserList/UserList';
 import { Loader } from 'components/Loader/Loader';
+import { Error } from 'components/Error/Error';
 
 import { Container, Title, Button, Link, Icon } from './Tweets.styled';
 
@@ -29,6 +30,7 @@ const Tweets = () => {
       </Button>
 
       <Title>Tweets</Title>
+      {error && <Error />}
       {isLoading && !error && <Loader />}
       {usersItems.length > 0 && <UserList users={usersItems} />}
     </Container>

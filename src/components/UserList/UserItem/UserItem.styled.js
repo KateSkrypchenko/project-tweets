@@ -69,34 +69,38 @@ export const Avatar = styled.img`
   left: 9px;
   width: 62px;
   height: 62px;
+
   border-radius: 85.9232px;
 `;
 
-export const ContentBox = styled.div``;
-
 export const Tweets = styled.p`
-  text-transform: uppercase;
   margin-bottom: 16px;
+
+  text-transform: uppercase;
 `;
 export const Followers = styled.p`
+  margin-bottom: 16px;
+
   text-transform: uppercase;
-  margin-bottom: 26px;
 `;
 
 export const Button = styled.button`
   width: 196px;
   height: 50px;
   padding: 14px 28px;
-  background-color: ${props => (props.isFollowed ? '#5CD3A8' : '#EBD8FF')};
-  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
-  border-radius: 10.3108px;
+
   font-weight: 600;
   font-size: 18px;
   line-height: 22px;
+
+  background-color: ${props => (props.isFollowed ? '#5CD3A8' : '#EBD8FF')};
+  box-shadow: 0px 3.43693px 3.43693px rgba(0, 0, 0, 0.25);
+  border-radius: 10.3108px;
   color: #373737;
   cursor: pointer;
   border: inherit;
   text-transform: uppercase;
+
   transition: background-color 250ms linear, transform 250ms linear;
 
   &:hover,

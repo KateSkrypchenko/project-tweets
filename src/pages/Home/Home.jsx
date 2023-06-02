@@ -2,10 +2,6 @@ import { Container, Title, Text, Button, Link, Icon } from './Home.styled';
 
 import { Comment } from 'react-loader-spinner';
 
-// import { IoLogoTumblr } from 'react-icons/io';
-// import { CgTwitter } from 'react-icons/cg';
-// BsFillArrowRightCircleFill;
-
 const Home = () => {
   return (
     <Container>

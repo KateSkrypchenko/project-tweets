@@ -2,9 +2,9 @@ import styled from 'styled-components';
 import { BsFilterSquareFill } from 'react-icons/bs';
 
 export const FilterBox = styled.div`
-  margin: 0 0 15px auto;
   height: 50px;
   width: 150px;
+  margin: 0 0 15px auto;
 `;
 
 export const FilterBtn = styled.button`
@@ -34,10 +34,11 @@ export const IconBtn = styled(BsFilterSquareFill)`
 
 export const FilterList = styled.ul`
   width: 150px;
-  background-color: #8d60f5;
-  border-radius: 10.3108px;
   position: absolute;
   z-index: 10;
+
+  background-color: #8d60f5;
+  border-radius: 10.3108px;
 `;
 
 export const FilterItem = styled.li`
@@ -48,11 +49,12 @@ export const FilterItem = styled.li`
 
 export const FilterItemBtn = styled.button`
   width: 100%;
+
   background-color: inherit;
   border: inherit;
+  border-radius: 10.3108px;
   cursor: pointer;
   color: #ebd8ff;
-  border-radius: 10.3108px;
 
   transition: background-color 250ms linear;
 

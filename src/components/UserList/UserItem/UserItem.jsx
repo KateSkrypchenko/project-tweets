@@ -9,7 +9,6 @@ import {
   Items,
   LogoImage,
   HorizontalLine,
-  ContentBox,
   AvatarBox,
   Avatar,
   Tweets,
@@ -65,7 +64,7 @@ export const UserItem = ({ id, user, tweets, followers, avatar }) => {
         />
       </AvatarBox>
 
-      <ContentBox>
+      <div>
         <Tweets>{tweets} tweets</Tweets>
         <Followers>
           {followerCount.toLocaleString('en-US', {
@@ -77,7 +76,7 @@ export const UserItem = ({ id, user, tweets, followers, avatar }) => {
         <Button onClick={handleClick} isFollowed={isFollowed}>
           {isFollowed ? 'Following' : 'Follow'}
         </Button>
-      </ContentBox>
+      </div>
     </Items>
   );
 };

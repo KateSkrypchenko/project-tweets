@@ -14,7 +14,6 @@ import {
 
 export const UserList = ({ users }) => {
   const [visibleUsers, setVisibleUsers] = useState(3);
-
   const [filter, setFilter] = useState('show all');
   const [filterOpen, setFilterOpen] = useState(false);
 
@@ -32,22 +31,23 @@ export const UserList = ({ users }) => {
   };
 
   const filteredUsers = useMemo(() => {
-    if (filter === 'show all') {
-      return users;
-    } else if (filter === 'follow') {
-      return users.filter(({ id }) => {
-        const userFollowingIds = JSON.parse(localStorage.getItem('userFollowingId')) || [];
-        return !userFollowingIds.includes(id);
-      });
-    } else if (filter === 'followings') {
-      return users.filter(({ id }) => {
-        const userFollowingIds = JSON.parse(localStorage.getItem('userFollowingId')) || [];
-        return userFollowingIds.includes(id);
-      });
+    switch (filter) {
+      case 'show all':
+        return users;
+      case 'follow':
+        return users.filter(({ id }) => {
+          const userFollowing = JSON.parse(localStorage.getItem('userFollowingId')) || [];
+          return !userFollowing.includes(id);
+        });
+      case 'followings':
+        return users.filter(({ id }) => {
+          const userFollowing = JSON.parse(localStorage.getItem('userFollowingId')) || [];
+          return userFollowing.includes(id);
+        });
+      default:
+        return users;
     }
-    return users;
   }, [filter, users]);
-  console.log(filteredUsers);
 
   return (
     <div>
@@ -84,7 +84,7 @@ export const UserList = ({ users }) => {
           />
         ))}
       </List>
-      {visibleUsers < users.length && <Button onClick={handleLoadMore}>Load More</Button>}
+      {visibleUsers < filteredUsers.length && <Button onClick={handleLoadMore}>Load More</Button>}
     </div>
   );
 };
