@@ -6,7 +6,6 @@ const initialState = {
   items: [],
   isLoading: false,
   error: null,
-  foll: [],
 };
 
 const handlePending = state => {
@@ -34,17 +33,8 @@ const usersSlice = createSlice({
       .addCase(updateUserFollowers.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.foll = action.payload;
       })
       .addCase(updateUserFollowers.rejected, (state, action) => handleRejected(state, action));
-
-    // .addCase(decreaseUserFollowers.pending, state => handlePending(state))
-    // .addCase(decreaseUserFollowers.fulfilled, (state, action) => {
-    //   state.isLoading = false;
-    //   state.error = null;
-    //   state.foll = action.payload;
-    // })
-    // .addCase(decreaseUserFollowers.rejected, (state, action) => handleRejected(state, action));
   },
 });
 

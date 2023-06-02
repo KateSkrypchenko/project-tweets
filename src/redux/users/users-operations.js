@@ -27,33 +27,3 @@ export const updateUserFollowers = createAsyncThunk(
     }
   }
 );
-
-// export const increaseUserFollowers = createAsyncThunk(
-//   'users/increaseUserFollowers',
-//   async (id, thunkAPI) => {
-//     try {
-//       const response = await instance.put(`/users/${id}`, {
-//         followers: thunkAPI.getState().users[id].followers + 1,
-//       });
-//       console.log(response);
-//       return response.data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );
-
-// export const decreaseUserFollowers = createAsyncThunk(
-//   'users/decreaseUserFollowers',
-//   async (id, thunkAPI) => {
-//     try {
-//       const response = await instance.put(`/users/${id}`, {
-//         followers: thunkAPI.getState().users[id].followers - 1,
-//       });
-//       console.log(response);
-//       return response.data;
-//     } catch (error) {
-//       return thunkAPI.rejectWithValue(error.message);
-//     }
-//   }
-// );

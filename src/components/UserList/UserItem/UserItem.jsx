@@ -2,7 +2,9 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { updateUserFollowers } from 'redux/users/users-operations';
+
 import {
   Items,
   LogoImage,
@@ -17,6 +19,7 @@ import {
 
 export const UserItem = ({ id, user, tweets, followers, avatar }) => {
   AOS.init();
+
   const [followerCount, setFollowerCount] = useState(followers);
   const [isFollowed, setIsFollowed] = useState(false);
   const dispatch = useDispatch();
@@ -37,11 +40,11 @@ export const UserItem = ({ id, user, tweets, followers, avatar }) => {
       setFollowerCount(prevState => prevState - 1);
       const removeId = userId.filter(userId => userId !== id);
       localStorage.setItem('userFollowingId', JSON.stringify(removeId));
-      dispatch(updateUserFollowers({ id, followerCount }));
+      dispatch(updateUserFollowers({ id, followers: followerCount - 1 }));
     } else {
       setFollowerCount(prevState => prevState + 1);
       localStorage.setItem('userFollowingId', JSON.stringify([...userId, id]));
-      dispatch(updateUserFollowers({ id, followerCount }));
+      dispatch(updateUserFollowers({ id, followers: followerCount + 1 }));
     }
   };
 
@@ -65,7 +68,11 @@ export const UserItem = ({ id, user, tweets, followers, avatar }) => {
       <ContentBox>
         <Tweets>{tweets} tweets</Tweets>
         <Followers>
-          {followerCount.toLocaleString()} follower{followerCount !== 1 && 's'}
+          {followerCount.toLocaleString('en-US', {
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 3,
+          })}{' '}
+          follower{followerCount !== 1 && 's'}
         </Followers>
         <Button onClick={handleClick} isFollowed={isFollowed}>
           {isFollowed ? 'Following' : 'Follow'}
