@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Project "Tweets Web Site" README
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a React-based web site that allows users to view a list of users and interact with
+the number of followers. The project consists of two pages: "Home" and "Tweets".
 
-## Available Scripts
+## Встановлення та запуск проєкту
 
-In the project directory, you can run:
+1. Clone the repository using the command:
+
+### `git clone <URL репозиторію>`
+
+2. Install dependencies by running the command:
+
+### `npm install`
+
+3. Start the project using the command:
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+4. Open a web browser and go to [http://localhost:3000](http://localhost:3000) to view the website.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+The project consists of the following files and directories:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- `public`: A directory that contains public files of the website, such as index.html and others.
+- `src`: A directory that contains the source code of the React application.
+- `components`: A directory that contains React components used on different pages.
+- `pages`: A directory that contains React components representing individual website pages.
+- `App.js`: The main React component that defines the routing and overall structure of the site.
+- `index.js`: The entry point of the application where the main component is rendered.
 
-### `npm run build`
+## Page Descriptions
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Home: This page provides general information about the website and its functionality. It serves
+   as the starting point for navigating to the "Tweets" page.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Tweets: This page displays a list of users along with the number of followers for each. Users can
+   click the "Go Back" button to return to the "Home" page. Additionally, each card has a button
+   that, when clicked, subscribes to the user and increases the number of followers. Clicking again
+   unsubscribes and decreases the number of followers. There is also a filter that allows filtering
+   users, including those that have been subscribed to.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Additional Information
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The project utilizes the React library for building the user interface.
+- React Router library is used for page routing.
+- Component styling is achieved using Styled Components.

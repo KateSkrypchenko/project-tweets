@@ -8,7 +8,6 @@ export const instance = axios.create({
 export const fetchUsers = createAsyncThunk('users/fetchAll', async (credentials, thunkAPI) => {
   try {
     const response = await instance.get('/users', credentials);
-    console.log(response);
     return response.data;
   } catch (error) {
     return thunkAPI.rejectWithValue(error.message);
@@ -20,7 +19,6 @@ export const updateUserFollowers = createAsyncThunk(
   async ({ id, followers }, thunkAPI) => {
     try {
       const response = await instance.put(`/users/${id}`, { followers });
-      console.log(response);
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
