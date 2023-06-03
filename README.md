@@ -3,7 +3,7 @@
 This project is a React-based web site that allows users to view a list of users and interact with
 the number of followers. The project consists of two pages: "Home" and "Tweets".
 
-## Встановлення та запуск проєкту
+## Installation and Project Setup
 
 1. Clone the repository using the command:
 
