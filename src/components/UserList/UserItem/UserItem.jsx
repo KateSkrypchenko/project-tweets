@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { updateUserFollowers } from 'redux/users/users-operations';
+import { followingSuccess, unfollowsWarning } from 'components/Toastify/Toastify';
 
 import {
   Items,
@@ -40,10 +41,12 @@ export const UserItem = ({ id, user, tweets, followers, avatar }) => {
       const removeId = userId.filter(userId => userId !== id);
       localStorage.setItem('userFollowingId', JSON.stringify(removeId));
       dispatch(updateUserFollowers({ id, followers: followerCount - 1 }));
+      unfollowsWarning();
     } else {
       setFollowerCount(prevState => prevState + 1);
       localStorage.setItem('userFollowingId', JSON.stringify([...userId, id]));
       dispatch(updateUserFollowers({ id, followers: followerCount + 1 }));
+      followingSuccess();
     }
   };
 
