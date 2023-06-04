@@ -34,10 +34,15 @@ export const Items = styled.li`
   }
 `;
 
-export const LogoImage = styled.img`
+export const LogoImage = styled.div`
   position: absolute;
   top: 20px;
   left: 20px;
+  width: 76px;
+  height: 22px;
+
+  background-image: url('images/logo.png');
+  background-repeat: no-repeat;
 `;
 
 export const HorizontalLine = styled.div`

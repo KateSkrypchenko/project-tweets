@@ -49,7 +49,7 @@ export const UserItem = ({ id, user, tweets, followers, avatar }) => {
 
   return (
     <Items key={id} data-aos="fade-up">
-      <LogoImage src="../public/images/logo.png" alt="logo" />
+      <LogoImage />
       <HorizontalLine />
       <AvatarBox>
         <Avatar
